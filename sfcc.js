@@ -32,8 +32,9 @@ export default async function getProducts(searchQuery) {
   };
 
   const searchClient = new Search.ShopperSearch(configWithAuth);
+  const limit = 3;
   const searchResults = await searchClient.productSearch({
-    parameters: { q: searchQuery },
+    parameters: { q: "dress", limit: limit },
   });
 
   const results = [];
